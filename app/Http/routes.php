@@ -23,5 +23,6 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 // Employee Routes
 Route::get('/employees', 'EmployeeController@index');
+Route::get('/employee', 'EmployeeController@add');
 Route::post('/employee', 'EmployeeController@store');
 Route::delete('/employee', 'EmployeeController@destroy');

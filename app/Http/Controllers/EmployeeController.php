@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Employee;
 
 class EmployeeController extends Controller
 {
@@ -23,5 +24,10 @@ class EmployeeController extends Controller
     	$employees = Employee::all();
 
     	return view('employees.index', ['employees' => $employees]);
+    }
+
+    public function add(Request $request)
+    {
+        return view('employees.add');
     }
 }

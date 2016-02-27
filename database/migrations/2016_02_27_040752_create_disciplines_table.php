@@ -15,6 +15,7 @@ class CreateDisciplinesTable extends Migration
         Schema::create('disciplines', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('employee_id')->index();
+            $table->string('type');
             $table->date('effective');
             $table->string('issued_by');
             $table->string('entered_by');

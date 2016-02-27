@@ -17,7 +17,7 @@ class CreateDisciplinesTable extends Migration
             $table->integer('employee_id')->index();
             $table->string('type');
             $table->date('effective');
-            $table->text('description');
+            $table->string('description');
             $table->string('issued_by');
             $table->string('entered_by');
             $table->timestamps();

@@ -8,6 +8,7 @@
             <th>First Name</th>
             <th>Department</th>
             <th>Title</th>
+            <th>Discipline History</th>
         </thead>
         <tbody>
             @foreach ($employees as $employee)
@@ -17,6 +18,7 @@
                     <td>{{ $employee->firstname }}</td>
                     <td>{{ $employee->dept }}</td>
                     <td>{{ $employee->title }}</td>
+                    <td></td>
                 </tr>
             @endforeach        
         </tbody>

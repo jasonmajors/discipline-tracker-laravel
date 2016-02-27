@@ -18,7 +18,7 @@
                     <td>{{ $employee->firstname }}</td>
                     <td>{{ $employee->dept }}</td>
                     <td>{{ $employee->title }}</td>
-                    <td></td>
+                    <td><a href="/discipline/{{ $employee->id }}">View</a></td>
                 </tr>
             @endforeach        
         </tbody>

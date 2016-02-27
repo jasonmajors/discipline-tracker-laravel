@@ -26,3 +26,6 @@ Route::get('/employees', 'EmployeeController@index');
 Route::get('/employee', 'EmployeeController@add');
 Route::post('/employee', 'EmployeeController@store');
 Route::delete('/employee', 'EmployeeController@destroy');
+// Discipline Routes
+Route::get('/discipline/{employee}', 'DisciplineController@view');
+Route::post('/discipline/{employee}', 'DisciplineController@store');

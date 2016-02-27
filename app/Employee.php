@@ -11,12 +11,13 @@ class Employee extends Model
     *
     * @var array
     */
-    protected $fillable = [	'emp_id', 
-    						'firstname',
-    						'lastname',
-    						'dept',
-    						'title',
-    					];
+    protected $fillable = [	
+                        'emp_id', 
+						'firstname',
+						'lastname',
+						'dept',
+						'title',
+    				];
     /**
     * Get all the disciplines for the employee
     */

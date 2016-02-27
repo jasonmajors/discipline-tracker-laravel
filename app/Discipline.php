@@ -11,10 +11,11 @@ class Discipline extends Model
     *
     * @var array
     */
-    protected $fillable = [	'type',
-    						'effective',
-    						'issued_by',
-    					];
+    protected $fillable = [	
+                        'type',
+						'effective',
+						'issued_by',
+    				];
 
     public function employee()
     {

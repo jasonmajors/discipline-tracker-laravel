@@ -33,9 +33,25 @@ class DisciplineController extends Controller
     		return view('discipline.view', ['employee' => $employee]);
     }
 
+    /**
+    * @param Request $request
+    * @param Employee $employee
+    * @return Response
+    */
     public function store(Request $request, Employee $employee)
     {
-    	//$employee->disciplines()->create([
-    	//	])
+    	$discipline = $employee->disciplines()->create([
+                                'type' => $request->type,
+                                'effective' => $request->effective,
+                                'issued_by' => $request->issuedby,
+                                'description' => $request->description,
+    	]);
+
+        $discipline->employee_id = $employee->id;
+        $discipline->entered_by = $request->user()->id;
+
+        $discipline->save();
+
+        return redirect('/');
     }
 }

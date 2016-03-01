@@ -52,7 +52,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         Employee::create([
-                        'emp_id' => $request->emp_id,
+                        'emp_num' => $request->emp_num,
                         'firstname' => $request->firstname,
                         'lastname' => $request->lastname,
                         'dept' => $request->dept,

@@ -12,7 +12,7 @@ class EmployeesTableSeeder extends Seeder
     public function run()
     {
         DB::table('employees')->insert([
-        	'emp_id' => 100001,
+        	'emp_num' => 100001,
         	'firstname' => 'John',
         	'lastname' => 'Doe',
         	'dept' => 'Marketing',
@@ -20,7 +20,7 @@ class EmployeesTableSeeder extends Seeder
         ]);
 
         DB::table('employees')->insert([
-        	'emp_id' => 100002,
+        	'emp_num' => 100002,
         	'firstname' => 'Jane',
         	'lastname' => 'Doe',
         	'dept' => 'Marketing',

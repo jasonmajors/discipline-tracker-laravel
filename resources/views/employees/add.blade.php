@@ -7,7 +7,7 @@
     	<div class="form-group">
 	    	<label for="employee_emp_id" class="col-sm-2 control-label">Employee Id</label>
 	    	<div class="col-sm-4">
-	    		<input type="number" name="emp_id" class="form-control" id="employee_emp_id" placeholder="Employee ID">
+	    		<input type="number" name="emp_num" class="form-control" id="employee_emp_num" placeholder="Employee ID">
 	    	</div>	
 	    </div>
         <div class="form-group">

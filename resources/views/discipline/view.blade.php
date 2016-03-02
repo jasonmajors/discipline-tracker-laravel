@@ -5,16 +5,16 @@
             <thead>
                 <th>Effective</th>
                 <th>Type</th>
-                <th>Description</th>
+                <th>Violation</th>
                 <th>Issued By</th>
-                <th>Remove</th>
+                <th>&nbsp</th>
             </thead>
             <tbody>
             @foreach($employee->disciplines as $discipline) 
                 <tr>
                     <td>{{ $discipline->effective->format('m/d/Y') }}</td>
                     <td>{{ $discipline->type }}</td>
-                    <td>{{ $discipline->description }}</td>
+                    <td>{{ $discipline->violation }}</td>
                     <td>{{ $discipline->issued_by }}</td>
                     <td>
                         <form action="/discipline/{{ $discipline->id }}" method="POST">
@@ -37,6 +37,12 @@
                 <label for="discipline_type" class="col-sm-2 control-label">Type</label>
                 <div class="col-sm-4">
                     <input type="text" name="type" class="form-control" id="discipline_type" placeholder="Type">
+                </div>  
+            </div>
+            <div class="form-group">
+                <label for="discipline_violation" class="col-sm-2 control-label">Violation</label>
+                <div class="col-sm-4">
+                    <input type="text" name="type" class="form-control" id="discipline_violation" placeholder="Violation">
                 </div>  
             </div>
             <div class="form-group">

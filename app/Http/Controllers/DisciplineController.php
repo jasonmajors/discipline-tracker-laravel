@@ -42,6 +42,7 @@ class DisciplineController extends Controller
     {
         $this->validate($request, [
             'type' => 'required',
+            'violation' => 'required',
             'effective' => 'required|max:255',
             'issued_by' => 'required',
             'description' => 'required'
@@ -49,6 +50,7 @@ class DisciplineController extends Controller
         
     	$discipline = $employee->disciplines()->create([
                                 'type' => $request->type,
+                                'violation' => $request->violation,
                                 'effective' => $request->effective,
                                 'issued_by' => $request->issued_by,
                                 'description' => $request->description,

@@ -16,6 +16,7 @@ class CreateDisciplinesTable extends Migration
             $table->increments('id');
             $table->integer('employee_id')->index();
             $table->string('type');
+            $table->string('violation');
             $table->date('effective');
             $table->string('description');
             $table->string('issued_by');

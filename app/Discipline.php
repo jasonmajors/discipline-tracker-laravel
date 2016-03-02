@@ -13,6 +13,7 @@ class Discipline extends Model
     */
     protected $fillable = [	
                         'type',
+                        'reason',
 						'effective',
                         'description',
 						'issued_by',

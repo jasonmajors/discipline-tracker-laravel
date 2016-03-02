@@ -3,18 +3,26 @@
     <h1 class="text-center">{{ $employee->firstname}} {{ $employee->lastname }}</h1>
         <table class="table">
             <thead>
-                <th>Type</th>
                 <th>Effective</th>
+                <th>Type</th>
                 <th>Description</th>
                 <th>Issued By</th>
+                <th>Remove</th>
             </thead>
             <tbody>
             @foreach($employee->disciplines as $discipline) 
                 <tr>
+                    <td>{{ $discipline->effective->format('m/d/Y') }}</td>
                     <td>{{ $discipline->type }}</td>
-                    <td>{{ $discipline->effective }}</td>
                     <td>{{ $discipline->description }}</td>
                     <td>{{ $discipline->issued_by }}</td>
+                    <td>
+                        <form action="/discipline/{{ $discipline->id }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button>Remove</button>
+                        </form>
+                    </td>        
                 </tr>
             @endforeach
             </tbody>
@@ -22,6 +30,7 @@
     <!-- Add New Discipline -->
     <div>
         <h2 class="text-center">Add New Discipline</h2>
+        @include('common.errors')
         <form class="form-horizontal" action="/discipline/{{ $employee->id }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
@@ -39,7 +48,7 @@
             <div class="form-group">
                 <label for="discipline_issued_by" class="col-sm-2 control-label">Issued by</label>
                 <div class="col-sm-4">
-                    <input type="text" name="issuedby" class="form-control" id="discipline_issued_by" placeholder="Issued by">
+                    <input type="text" name="issued_by" class="form-control" id="discipline_issued_by" placeholder="Issued by">
                 </div>  
             </div>
             <div class="form-group">

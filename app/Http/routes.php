@@ -25,7 +25,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/employees', 'EmployeeController@index');
 Route::get('/employee', 'EmployeeController@add');
 Route::post('/employee', 'EmployeeController@store');
-Route::delete('/employee', 'EmployeeController@destroy');
+Route::delete('/employee/{employee}', 'EmployeeController@destroy');
 // Discipline Routes
 Route::get('/discipline/{employee}', 'DisciplineController@view');
 Route::post('/discipline/{employee}', 'DisciplineController@store');
+Route::delete('/discipline/{discipline}', 'DisciplineController@destroy');

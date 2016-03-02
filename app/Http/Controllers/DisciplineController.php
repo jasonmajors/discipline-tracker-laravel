@@ -40,10 +40,17 @@ class DisciplineController extends Controller
     */
     public function store(Request $request, Employee $employee)
     {
+        $this->validate($request, [
+            'type' => 'required',
+            'effective' => 'required|max:255',
+            'issued_by' => 'required',
+            'description' => 'required'
+        ]);
+        
     	$discipline = $employee->disciplines()->create([
                                 'type' => $request->type,
                                 'effective' => $request->effective,
-                                'issued_by' => $request->issuedby,
+                                'issued_by' => $request->issued_by,
                                 'description' => $request->description,
     	]);
 
@@ -52,6 +59,18 @@ class DisciplineController extends Controller
 
         $discipline->save();
 
-        return redirect('/');
+        return redirect()->action('DisciplineController@view', [$employee]);
+    }
+
+    /**
+    * @param Request $request
+    * @param Discipline $discipline
+    * @return Response
+    */
+    public function destroy(Request $request, Discipline $discipline)
+    {
+        $discipline->delete();
+
+        return redirect()->action('DisciplineController@view', [$discipline->employee_id]);
     }
 }

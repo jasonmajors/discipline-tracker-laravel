@@ -18,6 +18,8 @@ class Discipline extends Model
 						'issued_by',
     				];
 
+    protected $dates = ['effective'];
+
     public function employee()
     {
     	return $this->belongsTo(Employee::class);

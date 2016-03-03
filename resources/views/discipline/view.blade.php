@@ -17,7 +17,7 @@
                     <td>{{ $discipline->reason }}</td>
                     <td>{{ $discipline->issued_by }}</td>
                     <td>
-                        <form action="/discipline/{{ $discipline->id }}" method="POST">
+                        <form action="/disciplines/{{ $discipline->id }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button>Remove</button>

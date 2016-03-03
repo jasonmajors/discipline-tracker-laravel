@@ -28,46 +28,46 @@
             </tbody>
         </table>       
     <!-- Add New Discipline -->
-    <div>
+    <div class="row">
         <h2 class="text-center">Add New Discipline</h2>
         @include('common.errors')
-        <form class="form-horizontal" action="/discipline/{{ $employee->id }}" method="POST">
+        <form class="form-horizontal" action="/disciplines/{{ $employee->id }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="discipline_type" class="col-sm-2 control-label">Type</label>
+                <label for="discipline_type" class="col-sm-2 col-sm-offset-2 control-label">Type</label>
                 <div class="col-sm-4">
                     <input type="text" name="type" class="form-control" id="discipline_type" placeholder="Type">
                 </div>  
             </div>
             <div class="form-group">
-                <label for="discipline_reason" class="col-sm-2 control-label">Reason</label>
+                <label for="discipline_reason" class="col-sm-2 col-sm-offset-2 control-label">Reason</label>
                 <div class="col-sm-4">
                     <input type="text" name="reason" class="form-control" id="discipline_reason" placeholder="Reason">
                 </div>  
             </div>
             <div class="form-group">
-                <label for="discipline_effective" class="col-sm-2 control-label">Effective</label>
+                <label for="discipline_effective" class="col-sm-2 col-sm-offset-2 control-label">Effective</label>
                 <div class="col-sm-4">
                     <input type="date" name="effective" class="form-control" id="discipline_effective" placeholder="Effective">
                 </div>  
             </div>
             <div class="form-group">
-                <label for="discipline_issued_by" class="col-sm-2 control-label">Issued by</label>
+                <label for="discipline_issued_by" class="col-sm-2 col-sm-offset-2 control-label">Issued by</label>
                 <div class="col-sm-4">
                     <input type="text" name="issued_by" class="form-control" id="discipline_issued_by" placeholder="Issued by">
                 </div>  
             </div>
             <div class="form-group">
-                <label for="discipline_description" class="col-sm-2 control-label">Description</label>
+                <label for="discipline_description" class="col-sm-2 col-sm-offset-2 control-label">Description</label>
                 <div class="col-sm-4">
                     <textarea rows="4" cols="75" name="description" class="form-control" id="discipline_description"></textarea>    
                 </div>  
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
+                <div class="col-sm-offset-4 col-sm-10">
                     <button type="submit" class="btn btn-default">Add Discipline</button>
                 </div>
             </div>
-        </form>   
+        </form>      
     </div>     
 @endsection

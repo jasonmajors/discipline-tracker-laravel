@@ -41,7 +41,7 @@ class DisciplineController extends Controller
     public function store(Request $request, Employee $employee)
     {
         $this->validate($request, [
-            'type' => 'required',
+            'type' => 'required|in:Verbal,Written,Suspension',
             'reason' => 'required',
             'effective' => 'required|max:255',
             'issued_by' => 'required',

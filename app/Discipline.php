@@ -11,18 +11,18 @@ class Discipline extends Model
     *
     * @var array
     */
-    protected $fillable = [	
+    protected $fillable = [ 
                         'type',
                         'reason',
-						'effective',
+                        'effective',
                         'description',
-						'issued_by',
-    				];
+                        'issued_by',
+                    ];
 
     protected $dates = ['effective'];
 
     public function employee()
     {
-    	return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class);
     }
 }

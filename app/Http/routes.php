@@ -28,5 +28,8 @@ Route::post('/employee', 'EmployeeController@store');
 Route::delete('/employee/{employee}', 'EmployeeController@destroy');
 // Discipline Routes
 Route::get('/disciplines/{employee}', 'DisciplineController@view');
+Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit');
+Route::put('/disciplines/{discipline}', 'DisciplineController@update');
 Route::post('/disciplines/{employee}', 'DisciplineController@store');
 Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy');
+

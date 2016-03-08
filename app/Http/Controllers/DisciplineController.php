@@ -65,6 +65,28 @@ class DisciplineController extends Controller
     }
 
     /**
+    * Show the form for editing the a Discipline entry
+    *
+    * @param  Discipline $discipline
+    * @return Response
+    */
+   public function edit(Discipline $discipline)
+   {
+      //
+   }
+
+   /**
+    * Update the specified Discipline entry
+    *
+    * @param  Discipline $discipline
+    * @return Response
+    */
+   public function update(Discipline $discipline)
+   {
+      //
+   }
+
+    /**
     * @param Request $request
     * @param Discipline $discipline
     * @return Response

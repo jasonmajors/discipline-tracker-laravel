@@ -19,3 +19,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Employee::class, function (Faker\Generator $faker) {
+	return [
+		'emp_num' => $faker->numberBetween($min = 100005, $max = 199999),
+		'firstname' => $faker->firstName,
+		'lastname' => $faker->lastName,
+		'dept' => $faker->company,
+		'title' => $faker->cityPrefix,
+	];
+});

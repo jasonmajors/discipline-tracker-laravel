@@ -38,9 +38,9 @@ class EmployeeController extends Controller
     * @param Request $request
     * @return Response
     */
-    public function add(Request $request)
+    public function create(Request $request)
     {
-        return view('employees.add');
+        return view('employees.create');
     }
 
     /**
@@ -59,6 +59,6 @@ class EmployeeController extends Controller
                         'title' => $request->title,
                             ]);
         
-        return redirect('/employees');
+        return redirect()->action('EmployeeController@index');
     }
 }

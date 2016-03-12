@@ -28,7 +28,7 @@ class DisciplineController extends Controller
     * @param Employee $employee
     * @return Response
     */
-    public function view(Request $request, Employee $employee)
+    public function viewAll(Request $request, Employee $employee)
     {
     		return view('discipline.view', ['employee' => $employee]);
     }
@@ -61,7 +61,18 @@ class DisciplineController extends Controller
 
         $discipline->save();
 
-        return redirect()->action('DisciplineController@view', [$employee]);
+        return redirect()->action('DisciplineController@viewAll', [$employee]);
+    }
+
+    /**
+    * View a specific Discipline
+    *
+    * @param  Discipline $discipline
+    * @return Response
+    */
+    public function show(Discipline $discipline)
+    {
+        //
     }
 
     /**
@@ -95,6 +106,6 @@ class DisciplineController extends Controller
     {
         $discipline->delete();
 
-        return redirect()->action('DisciplineController@view', [$discipline->employee_id]);
+        return redirect()->action('DisciplineController@viewAll', [$discipline->employee_id]);
     }
 }

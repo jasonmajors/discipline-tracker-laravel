@@ -8,6 +8,7 @@
                 <th>Reason</th>
                 <th>Issued By</th>
                 <th>&nbsp</th>
+                <th>&nbsp</th>
             </thead>
             <tbody>
             @foreach($employee->disciplines as $discipline) 
@@ -20,9 +21,14 @@
                         <form action="/disciplines/{{ $discipline->id }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button>Remove</button>
+                            <button class="btn btn-default">Remove</button>
                         </form>
-                    </td>        
+                    </td>  
+                    <td>
+                        <a href="{{ action('DisciplineController@show', ['id' => $discipline->id ]) }}">
+                            <button class="btn btn-default">View</button>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

@@ -55,7 +55,7 @@ class DisciplineController extends Controller
                                 'issued_by' => $request->issued_by,
                                 'description' => $request->description,
     	]);
-
+        // Save the values that are not mass assignable
         $discipline->employee_id = $employee->id;
         $discipline->entered_by = $request->user()->id;
 
@@ -72,7 +72,7 @@ class DisciplineController extends Controller
     */
     public function show(Discipline $discipline)
     {
-        //
+        return view('discipline.show', ['discipline' => $discipline]);
     }
 
     /**

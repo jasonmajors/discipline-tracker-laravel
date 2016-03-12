@@ -27,10 +27,10 @@ Route::get('/employees/create', 'EmployeeController@create');
 Route::post('/employees', 'EmployeeController@store');
 Route::delete('/employees/{employee}', 'EmployeeController@destroy');
 // Discipline Routes
-Route::get('/disciplines/{employee}', 'DisciplineController@viewAll');
-Route::get('/disciplines/{discipline}', 'DisciplineController@show');
-Route::post('/disciplines/{employee}', 'DisciplineController@store');
-Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit');
-Route::put('/disciplines/{discipline}', 'DisciplineController@update');
+Route::get('/disciplines/{employee}', 'DisciplineController@viewAll'); // View all an employee's disciplines
+Route::get('/disciplines/{discipline}/view', 'DisciplineController@show'); 
+Route::post('/disciplines/{employee}', 'DisciplineController@store'); 
+Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit'); 
+Route::put('/disciplines/{discipline}', 'DisciplineController@update'); 
 Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy');
 

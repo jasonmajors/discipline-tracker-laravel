@@ -23,13 +23,14 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 // Employee Routes
 Route::get('/employees', 'EmployeeController@index');
-Route::get('/employee', 'EmployeeController@add');
-Route::post('/employee', 'EmployeeController@store');
-Route::delete('/employee/{employee}', 'EmployeeController@destroy');
+Route::get('/employees/create', 'EmployeeController@create');
+Route::post('/employees', 'EmployeeController@store');
+Route::delete('/employees/{employee}', 'EmployeeController@destroy');
 // Discipline Routes
-Route::get('/disciplines/{employee}', 'DisciplineController@view');
+Route::get('/disciplines/{employee}', 'DisciplineController@viewAll');
+Route::get('/disciplines/{discipline}', 'DisciplineController@show');
+Route::post('/disciplines/{employee}', 'DisciplineController@store');
 Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit');
 Route::put('/disciplines/{discipline}', 'DisciplineController@update');
-Route::post('/disciplines/{employee}', 'DisciplineController@store');
 Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy');
 

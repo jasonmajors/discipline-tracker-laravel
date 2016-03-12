@@ -2,7 +2,7 @@
 @section('content')
     <h1 class="text-center">Add New Employee</h1>
     @include('common.errors')
-    <form class="form-horizontal" action="/employee" method="POST">
+    <form class="form-horizontal" action="/employees" method="POST">
     	{{ csrf_field() }}
     	<div class="form-group">
 	    	<label for="employee_emp_id" class="col-sm-2 control-label">Employee Id</label>

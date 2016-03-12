@@ -29,7 +29,7 @@
         </table>       
     <!-- Add New Discipline -->
     <div class="row">
-        <h2 class="text-center">Add New Discipline</h2>
+        <h2 class="text-center">Add New Discipline</h2>   
         @include('common.errors')
         <form class="form-horizontal" action="/disciplines/{{ $employee->id }}" method="POST">
             {{ csrf_field() }}

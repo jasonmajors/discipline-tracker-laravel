@@ -4,6 +4,7 @@
         <title>Laravel</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="reveal.css" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
@@ -14,7 +15,6 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                display: table;
                 font-weight: 100;
                 font-family: 'Lato';
             }
@@ -25,17 +25,14 @@
                 vertical-align: middle;
             }
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
             .title {
                 font-size: 96px;
             }
         </style>
     </head>
     <body>
+        <div id="curtain"></div>
+        <div id="reveal-main"></div>
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>

@@ -83,7 +83,7 @@ class DisciplineController extends Controller
     */
    public function edit(Discipline $discipline)
    {
-      //
+      return view('discipline.edit', ['discipline' => $discipline]);
    }
 
    /**

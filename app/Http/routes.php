@@ -25,12 +25,12 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/employees', 'EmployeeController@index');
 Route::get('/employees/create', 'EmployeeController@create');
 Route::post('/employees', 'EmployeeController@store');
-Route::delete('/employees/{employee}', 'EmployeeController@destroy');
+Route::delete('/employees/{employee}', 'EmployeeController@destroy'); // TODO: Create the method
 // Discipline Routes
 Route::get('/disciplines/{employee}', 'DisciplineController@viewAll'); // View all an employee's disciplines
 Route::get('/disciplines/{discipline}/view', 'DisciplineController@show'); 
 Route::post('/disciplines/{employee}', 'DisciplineController@store'); 
 Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit'); 
-Route::put('/disciplines/{discipline}', 'DisciplineController@update'); 
-Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy');
+Route::put('/disciplines/{discipline}', 'DisciplineController@update'); // TODO: Create the method
+Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy'); 
 

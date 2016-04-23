@@ -9,6 +9,7 @@
                 <th>Issued By</th>
                 <th>&nbsp</th>
                 <th>&nbsp</th>
+                <th>&nbsp</th>
             </thead>
             <tbody>
             @foreach($employee->disciplines as $discipline) 
@@ -18,17 +19,22 @@
                     <td>{{ $discipline->reason }}</td>
                     <td>{{ $discipline->issued_by }}</td>
                     <td>
+                        <a href="{{ action('DisciplineController@show', ['id' => $discipline->id ]) }}">
+                            <button class="btn btn-default">View</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ action('DisciplineController@edit', ['id' => $discipline->id]) }}">
+                            <button class="btn btn-default">Edit</button>
+                        </a>
+                    </td>        
+                    <td>
                         <form action="/disciplines/{{ $discipline->id }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                             <button class="btn btn-default">Remove</button>
                         </form>
                     </td>  
-                    <td>
-                        <a href="{{ action('DisciplineController@show', ['id' => $discipline->id ]) }}">
-                            <button class="btn btn-default">View</button>
-                        </a>
-                    </td>
                 </tr>
             @endforeach
             </tbody>

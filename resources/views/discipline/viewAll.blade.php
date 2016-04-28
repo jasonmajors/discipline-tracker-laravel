@@ -48,7 +48,7 @@
             <div class="form-group">
                 <label for="discipline_type" class="col-sm-2 col-sm-offset-2 control-label">Type</label>
                 <div class="col-sm-4">
-                    <select name="type" class="form-control">
+                    <select name="type" class="form-control" id="discipline_type">
                         <option value="Verbal">Verbal</option>
                         <option value="Written">Written</option>
                         <option value="Suspension">Suspension</option>

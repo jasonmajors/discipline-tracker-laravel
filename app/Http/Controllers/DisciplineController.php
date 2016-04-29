@@ -28,9 +28,9 @@ class DisciplineController extends Controller
     * @param Employee $employee
     * @return Response
     */
-    public function viewAll(Request $request, Employee $employee)
+    public function viewAll(Employee $employee)
     {
-    		return view('discipline.view', ['employee' => $employee]);
+    		return view('discipline.viewAll', ['employee' => $employee]);
     }
 
     /**
@@ -92,9 +92,24 @@ class DisciplineController extends Controller
     * @param  Discipline $discipline
     * @return Response
     */
-   public function update(Discipline $discipline)
+   public function update(Request $request, Discipline $discipline)
    {
-      //
+        $this->validate($request, [
+            'type' => 'required|in:Verbal,Written,Suspension',
+            'reason' => 'required',
+            'effective' => 'required|max:255',
+            'issued_by' => 'required',
+            'description' => 'required'
+        ]);
+
+        $discipline->type = $request->type;
+        $discipline->reason = $request->reason;
+        $discipline->effective = $request->effective;
+        $discipline->issued_by = $request->issued_by;
+        $discipline->description = $request->description;
+        $discipline->save();
+
+        return redirect()->action('DisciplineController@viewAll', [$discipline->employee_id]);
    }
 
     /**

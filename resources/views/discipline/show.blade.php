@@ -6,4 +6,7 @@
     <p class="text-left">Type: {{ $discipline->type }}</p>
     <p class="text-left">Reason: {{ $discipline->reason }}</p>
     <p class="text-left">Description: {{ $discipline->description }}</p>
+    <a href="{{ action('DisciplineController@edit', ['id' => $discipline->id]) }}">
+        <button class="btn btn-default">Edit</button>
+    </a>
 @endsection

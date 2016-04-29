@@ -61,6 +61,8 @@ class DisciplineController extends Controller
 
         $discipline->save();
 
+        \Session::flash('success', 'Discipline added');
+        
         return redirect()->action('DisciplineController@viewAll', [$employee]);
     }
 
@@ -108,6 +110,8 @@ class DisciplineController extends Controller
         $discipline->issued_by = $request->issued_by;
         $discipline->description = $request->description;
         $discipline->save();
+
+        \Session::flash('success', 'Updated succesful');
 
         return redirect()->action('DisciplineController@viewAll', [$discipline->employee_id]);
    }

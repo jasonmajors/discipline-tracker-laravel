@@ -6,7 +6,11 @@
 		<title>Discipline Tracker</title>
 	</head>
 	<body>
+		@if (Session::has('success'))
+			<div class="alert alert-success">{{ Session::get('success') }}</div>
+		@endif
 		<div class="container">
+
 			@yield('content')
 		</div>
 	</body>

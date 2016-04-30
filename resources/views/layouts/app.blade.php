@@ -9,8 +9,8 @@
 		@if (Session::has('success'))
 			<div class="alert alert-success">{{ Session::get('success') }}</div>
 		@endif
+		@include('common.navbar')
 		<div class="container">
-
 			@yield('content')
 		</div>
 	</body>

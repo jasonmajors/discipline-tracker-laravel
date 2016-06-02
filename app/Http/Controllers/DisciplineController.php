@@ -41,15 +41,15 @@ class DisciplineController extends Controller
     public function store(Request $request, Employee $employee)
     {
         $this->validate($request, [
-            'type' => 'required|in:Verbal,Written,Suspension',
-            'reason' => 'required',
-            'effective' => 'required|max:255',
+            'type_id' => 'required',
+            'reason' => 'required|max:255',
+            'effective' => 'required',
             'issued_by' => 'required',
             'description' => 'required'
         ]);
         
     	$discipline = $employee->disciplines()->create([
-                                'type' => $request->type,
+                                'type_id' => $request->type_id,
                                 'reason' => $request->reason,
                                 'effective' => $request->effective,
                                 'issued_by' => $request->issued_by,
@@ -97,14 +97,14 @@ class DisciplineController extends Controller
    public function update(Request $request, Discipline $discipline)
    {
         $this->validate($request, [
-            'type' => 'required|in:Verbal,Written,Suspension',
+            'type_id' => 'required',
             'reason' => 'required',
             'effective' => 'required|max:255',
             'issued_by' => 'required',
             'description' => 'required'
         ]);
 
-        $discipline->type = $request->type;
+        $discipline->type_id = $request->type_id;
         $discipline->reason = $request->reason;
         $discipline->effective = $request->effective;
         $discipline->issued_by = $request->issued_by;

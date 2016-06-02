@@ -9,19 +9,19 @@
         <div class="form-group">
             <label for="discipline_type" class="col-sm-2 col-sm-offset-2 control-label">Type</label>
             <div class="col-sm-4">
-                <select name="type" class="form-control" id="discipline_type">
-                    @if ($discipline->type == 'Verbal')
-                        <option value="Verbal" selected>Verbal</option>
-                        <option value="Written">Written</option>
-                        <option value="Suspension">Suspension</option>
-                    @elseif ($discipline->type == 'Written')
-                        <option value="Verbal">Verbal</option>
-                        <option value="Written" selected>Written</option>
-                        <option value="Suspension">Suspension</option>
-                    @elseif ($discipline->type == 'Suspension')
-                        <option value="Verbal">Verbal</option>
-                        <option value="Written">Written</option>
-                        <option value="Suspension" selected>Suspension</option>
+                <select name="type_id" class="form-control" id="discipline_type">
+                    @if ($discipline->type_id == '1')
+                        <option value="1" selected>Verbal</option>
+                        <option value="2">Written</option>
+                        <option value="3">Suspension</option>
+                    @elseif ($discipline->type_id == '2')
+                        <option value="1">Verbal</option>
+                        <option value="2" selected>Written</option>
+                        <option value="3">Suspended</option>
+                    @elseif ($discipline->type_id == '3')
+                        <option value="1">Verbal</option>
+                        <option value="2">Written</option>
+                        <option value="3" selected>Suspension</option>
                     @endif
                 </select>   
             </div>  

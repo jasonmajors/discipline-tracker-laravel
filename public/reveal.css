@@ -1,0 +1,16 @@
+#curtain {
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  background: black;
+}
+
+#reveal-main {
+  height: 100vh;
+}
+
+.content {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}

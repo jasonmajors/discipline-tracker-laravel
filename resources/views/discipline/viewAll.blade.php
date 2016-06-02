@@ -15,7 +15,7 @@
             @foreach($employee->disciplines as $discipline) 
                 <tr>
                     <td>{{ $discipline->effective->format('m/d/Y') }}</td>
-                    <td>{{ $discipline->type }}</td>
+                    <td>{{ $discipline->type->type }}</td>
                     <td>{{ $discipline->reason }}</td>
                     <td>{{ $discipline->issued_by }}</td>
                     <td>
@@ -48,10 +48,10 @@
             <div class="form-group">
                 <label for="discipline_type" class="col-sm-2 col-sm-offset-2 control-label">Type</label>
                 <div class="col-sm-4">
-                    <select name="type" class="form-control" id="discipline_type">
-                        <option value="Verbal">Verbal</option>
-                        <option value="Written">Written</option>
-                        <option value="Suspension">Suspension</option>
+                    <select name="type_id" class="form-control" id="discipline_type">
+                        <option value="1">Verbal</option>
+                        <option value="2">Written</option>
+                        <option value="3">Suspension</option>
                     </select>   
                 </div>  
             </div>

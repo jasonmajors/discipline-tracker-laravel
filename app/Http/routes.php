@@ -31,6 +31,6 @@ Route::get('/disciplines/{employee}', 'DisciplineController@viewAll'); // View a
 Route::get('/disciplines/{discipline}/view', 'DisciplineController@show'); 
 Route::post('/disciplines/{employee}', 'DisciplineController@store'); 
 Route::get('/disciplines/{discipline}/edit', 'DisciplineController@edit'); 
-Route::put('/disciplines/{discipline}', 'DisciplineController@update'); // TODO: Create the method
+Route::put('/disciplines/{discipline}', 'DisciplineController@update'); 
 Route::delete('/disciplines/{discipline}', 'DisciplineController@destroy'); 
 

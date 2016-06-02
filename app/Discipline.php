@@ -12,7 +12,7 @@ class Discipline extends Model
     * @var array
     */
     protected $fillable = [ 
-                        'type',
+                        'type_id',
                         'reason',
                         'effective',
                         'description',
@@ -24,5 +24,10 @@ class Discipline extends Model
     public function employee()
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

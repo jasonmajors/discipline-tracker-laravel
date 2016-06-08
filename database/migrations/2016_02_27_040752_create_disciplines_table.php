@@ -13,6 +13,7 @@ class CreateDisciplinesTable extends Migration
      */
     public function up()
     {
+        // Just testing something...
         MigrationHelper::createRefTable('types');
         
         Schema::create('disciplines', function (Blueprint $table) {
